@@ -11,3 +11,7 @@
 
   <button type="button" (click)="goBack()">go back</button>
   <button type="button" (click)="save()">save</button>
+
+  <label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>

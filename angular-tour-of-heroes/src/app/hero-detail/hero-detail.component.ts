@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import {Hero} from '../hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -39,4 +39,10 @@ export class HeroDetailComponent {
         .subscribe(() => this.goBack());
     }
   }
+
+  @Output() childOutput = new EventEmitter<string>();
+
+ addNewItem(value: string) {
+  this.childOutput.emit(value);
+}
 }

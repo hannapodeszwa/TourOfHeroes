@@ -16,11 +16,16 @@ import {FormsModule} from '@angular/forms';
 })
 export class HeroesComponent {
   heroes: Hero[] = [];
+  childOutput = ['item1', 'item2'];
 
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
     this.getHeroes();
+  }
+
+  addItem(newItem: string) {
+    this.childOutput.push(newItem);
   }
 
   getHeroes(): void {
